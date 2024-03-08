@@ -1,36 +1,36 @@
-# OneNet Connector FIWARE Data App
+# Energy Data Space Connector FIWARE Data App
 
 ## First Step - Configuration
-Clone the OneNet-Fiware-True-Connector environment on your server.
+Clone the Data-Space-Fiware-True-Connector environment on your server.
 
 The change for customization must be made in the three files, some configuration files must be modified:
 
-**onenet-connector-fiware-data-app/src/test/resources/application.properties**
+**/src/test/resources/application.properties**
 
-**onenet-connector-fiware-data-app/src/main/resources/application.properties**
+**/src/main/resources/application.properties**
 
-**onenet-true-connector/docker/.env**
+**/docker/.env**
 
 
 In this case it is necessary to change the IP address (e.g., 217.172.12.150) by entering the IP of the server hosting this new installation.
 
 
-onenet-connector-fiware-data-app/src/test/resources/application.properties-application.orion.host=**your-ip-address**
+/src/test/resources/application.properties-application.orion.host=**your-ip-address**
 
-onenet-connector-fiware-data-app/src/test/resources/application.properties-application.mongo.host=**your-ip-address**
+/src/test/resources/application.properties-application.mongo.host=**your-ip-address**
 
-onenet-connector-fiware-data-app/src/main/resources/application.properties-application.orion.host=**your-ip-address**
+/src/main/resources/application.properties-application.orion.host=**your-ip-address**
 
-onenet-connector-fiware-data-app/src/main/resources/application.properties-application.mongo.host=**your-ip-address**
+/src/main/resources/application.properties-application.mongo.host=**your-ip-address**
 
-onenet-true-connector/docker/.env-LOCAL_IP_PROVIDER_CONTEXT_BROKER=**your-ip-address**
+/docker/.env-LOCAL_IP_PROVIDER_CONTEXT_BROKER=**your-ip-address**
 
 
 
 ## Second Step - Build & Start
-Let's start the OneNet services, first step compile the java code and create the build.
+Let's start the Data Space Connector services, first step compile the java code and create the build.
 
-cd onenet-connector-fiware-data-app/
+cd data-space-connector-fiware-data-app/
 
 ### JAVA Build 
 
@@ -38,17 +38,17 @@ mvn clean install -U -e
 
 ### Docker build
 
-docker build -t onenet-connector-fiware-data-app:0.1 .
+docker build -t data-space-connector-fiware-data-app:1.0 .
 
-cd onenet-true-connector/docker
+cd docker
 
 ### Start orion-context-broker service
 
 docker-compose -f docker-compose-cb.yml up -d
 
-cd onenet-connector-fiware-data-app/doc
+cd doc
 
-### Start OneNet-Fiware-true-connector
+### Start Data-Space-Fiware-true-connector
 
 docker-compose up -d
 
