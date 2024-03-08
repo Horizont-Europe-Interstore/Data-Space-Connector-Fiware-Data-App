@@ -1,0 +1,6 @@
+# COMPILA
+mvn clean install -U -e
+
+# BUILD
+docker build -t onenet-connector-fiware-data-app:0.1 .
+
