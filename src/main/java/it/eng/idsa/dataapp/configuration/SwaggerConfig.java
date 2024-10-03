@@ -45,6 +45,7 @@ public class SwaggerConfig {
 		HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 		requestFactory.setReadTimeout(600000);
 		requestFactory.setConnectTimeout(600000);
+		requestFactory.setBufferRequestBody(false);
 		return new RestTemplate(requestFactory);
 	}
 

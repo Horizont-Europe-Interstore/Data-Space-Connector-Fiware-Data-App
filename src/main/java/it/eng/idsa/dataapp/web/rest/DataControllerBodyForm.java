@@ -20,17 +20,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.google.gson.Gson;
+
 import de.fraunhofer.iais.eis.Message;
+import it.eng.idsa.dataapp.handler.ArtifactMessageHandler;
+import it.eng.idsa.dataapp.handler.DataAppMessageHandler;
+import it.eng.idsa.dataapp.handler.MessageHandlerFactory;
 import it.eng.idsa.dataapp.model.OrionRequest;
 import it.eng.idsa.dataapp.service.OrionContextBrokerService;
 import it.eng.idsa.dataapp.util.ConstantUtil;
 import it.eng.idsa.dataapp.util.MessageUtil;
-import it.eng.idsa.dataapp.handler.ArtifactMessageHandler;
-import it.eng.idsa.dataapp.handler.DataAppMessageHandler;
-import it.eng.idsa.dataapp.handler.MessageHandlerFactory;
 import it.eng.idsa.multipart.processor.MultipartMessageProcessor;
-import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @ConditionalOnProperty(name = "application.dataapp.http.config", havingValue = "form")
@@ -126,10 +128,11 @@ public class DataControllerBodyForm {
 				MultipartMessageProcessor.serializeToJsonLD(responseHeader),
 				responsePayload != null ? responsePayload.toString() : null, payloadContentType);
 
+
 		ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 		resultEntity.writeTo(outStream);
 		outStream.flush();
-
+			
 		return ResponseEntity.ok().header("foo", "bar")
 				.contentType(MediaType.parseMediaType(resultEntity.getContentType().getValue()))
 				.body(outStream.toString());

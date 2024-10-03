@@ -78,7 +78,7 @@ public class OrionContextBrokerServiceImpl implements OrionContextBrokerService 
 			}
 			throw e;
 		}
-		logger.info("Response received {}\n with status code {}", response.getBody(), response.getStatusCode());
+		logger.info("Response status code {}", response.getStatusCode());
 		if (response != null && response.getStatusCode() == HttpStatus.OK) {
 			return response.getBody();
 		}
