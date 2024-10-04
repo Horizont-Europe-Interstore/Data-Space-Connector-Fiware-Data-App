@@ -679,7 +679,7 @@ public class ProxyServiceImpl implements ProxyService {
 		logger.info("ENG: Orion httpHeaders            {}", orionHeaders);
 		logger.info("Forwarding form POST request to {}", uri.toString());
 		HttpEntity<String> requestEntity = new HttpEntity<>(body, orionHeaders);
-		logger.info("ENG: requestEntity              {}", requestEntity);
+		logger.debug("ENG: requestEntity              {}", requestEntity);
 
 		logger.info("ENG: calling restTemplate.exchange()... {}", uri);
 		ResponseEntity<String> resp = null;

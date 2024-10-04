@@ -53,7 +53,7 @@ public class CreateEntityController {
 		logger.info("ENG: request.getRequestURI()       {}", request.getRequestURI());
 		logger.info("ENG: request httpHeaders {}", httpHeaders);
 		logger.info("ENG: request     {}", request);
-		logger.info("ENG: body        {}", body);
+		logger.debug("ENG: body        {}", body);
 
 		var orionHeaders = new HttpHeaders();
 		orionHeaders.add("Content-Length", String.valueOf(body.length()));
