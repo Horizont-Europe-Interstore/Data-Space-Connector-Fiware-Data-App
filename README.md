@@ -1,5 +1,12 @@
 # Energy Data Space Connector FIWARE Data App
 
+## Introduction
+<img src="images/TRUE_Connector_Logo.png" alt="True Connector" width="25%" height="25%">
+<img src="images/idsa-sign-component-certification-small.png" alt="IDS certified" width="5%" height="5%">
+
+This project started from and extends the [Engineering True Connector](https://github.com/Engineering-Research-and-Development/true-connector), a general purpose Data Space Connector and open-source project developed by ENG. The connector is an open-source solution, designed to enable self-determined data sharing while ensuring compliance with regulations such as GDPR. Initially focused on the manufacturing domain, the TRUE Connector has proven its versatility across diverse sectors including circular economy, energy, smart buildings, and agri-food domains. It has recently received IDS certification.
+
+
 ## First Step - Configuration
 Clone the Data-Space-Fiware-True-Connector environment on your server.
 
@@ -116,3 +123,5 @@ curl --location --request GET 'http://<LOCAL IP ADDRESS>:8084/getentity/urn:ngsi
 --header 'accept: application/json'
 ```
 
+[![License: AGPL](https://img.shields.io/github/license/Engineering-Research-and-Development/true-connector-fiware_data_app.svg)](https://opensource.org/licenses/AGPL-3.0)
+[![Docker badge](https://img.shields.io/docker/pulls/interstore/data-space-connector-fiware-data-app.svg)](https://hub.docker.com/r/interstore/data-space-connector-fiware-data-app)
